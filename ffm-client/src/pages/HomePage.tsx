@@ -1,9 +1,27 @@
-import * as React from "react";
+import React from 'react';
+import { Route } from 'react-router-dom';
+import HomeLayout from '@/components/home/HomeLayout';
+import HomeTemplate from '@/components/home/HomeTemplate';
+import HomeResponsive from '@/components/home/HomeResponsive';
+import MainTrendingPage from './MainTrendingPage';
 
-export interface HomePageProps {}
+export type HomePageProps = {};
 
-const HomePage: React.FC<HomePageProps> = props => {
-  return <div>cra-template-songc</div>;
-};
+function HomePage(props: HomePageProps) {
+  return (
+    <HomeTemplate>
+      <HomeResponsive>
+        <HomeLayout
+          main={
+            <>
+              <Route path={['/', '/home']} component={MainTrendingPage} exact />
+            </>
+          }
+          side={<div />}
+        />
+      </HomeResponsive>
+    </HomeTemplate>
+  );
+}
 
 export default HomePage;
