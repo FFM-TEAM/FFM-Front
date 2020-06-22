@@ -2,6 +2,14 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import format from 'date-fns/format';
 import koLocale from 'date-fns/locale/ko';
 
+export const getScrollTop = () => {
+  if (!document.body) return 0;
+  const scrollTop = document.documentElement
+    ? document.documentElement.scrollTop || document.body.scrollTop
+    : document.body.scrollTop;
+  return scrollTop;
+};
+
 export const formatDate = (date: string): string => {
   const now = Date.now();
   const diff = now - new Date(date).getTime();
