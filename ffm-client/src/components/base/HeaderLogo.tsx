@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import palette from '../../lib/styles/palette';
 import media from '../../lib/styles/media';
-import { ellipsis } from '../../lib/styles/utils';
-import { Logo } from '@/static/svg';
 import { ffMLogo } from '@/static/images';
 
 export interface HeaderLogoProps {}
